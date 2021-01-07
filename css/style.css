@@ -1,0 +1,78 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+/* THE MAPS */
+#mapid { 
+    height: 50vh; 
+    margin: .5em;
+}
+
+
+/* MAIN MENU */
+.main-menu {
+    padding: 1em;
+}
+
+.title {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.menu__search {
+    margin-top: 1em;
+}
+
+.search__box {
+    width: 100%;
+    margin-top: .5em;
+    height: 3em;
+    border: 1px solid black;
+    border-radius: 5px;
+    box-sizing: border-box;
+    padding: 0 .5em;
+}
+
+.locations {
+    margin-top: 1.5em;
+}
+
+.locations__point {
+    list-style-type: none;
+    box-sizing: border-box;
+    height: 2em;
+    border-left: 3px solid black;
+    padding-left: .5em;
+    margin-bottom: 1em;
+    cursor: pointer;
+}
+
+.cctv {
+    box-sizing: border-box;
+}
+
+.cctv > img {
+    width: 100%;
+}
+
+.cctv-header {
+    display: flex;
+    margin-bottom: 2em;
+    cursor: pointer;
+}
+
+.cctv-place {
+    flex: 1 1 auto;
+    font-size: 1.5em;
+    text-align: right;
+}
+
+.btn-back {
+    flex: 1 1 15%;
+    box-sizing: border-box;
+    padding: .5em;
+}
+
+.btn-back > img {
+    height: 2em;
+}
