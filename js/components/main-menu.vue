@@ -3,7 +3,10 @@
         <h1 class="title">CCTV Kota Malang</h1>
         <div class="menu__search">
             <p class="search__text">Cari berdasarkan lokasi/nama jalan</p>
-            <input type="text" class="search__box" v-model="searchLocation" @change="filterLocation">
+            <div class="search-container">
+                <input type="text" class="search__box" v-model="searchLocation" @change="filterLocation">
+                <img class="search__icon" src="img/magnifying-glass.svg" alt="" v-on:click="filterLocation">
+            </div>
         </div>
         <div class="locations">
             <ul class="locations__list">
