@@ -7,14 +7,15 @@
             <h1 class="cctv-place">{{ this.showingLocation.name }}</h1>
         </div>
         <div class="cctv">
-            <img :src="streamImage" alt="">
+            <img v-show="isStream" :src="streamImage" alt="">
+            <p class="cctv-wait" v-show="!isStream">fetching image..</p>
         </div>
     </div>
 </template>
 
 <script>
 module.exports = {
-    props: ['showingLocation', 'streamImage'],
+    props: ['showingLocation', 'streamImage', 'isStream'],
 
     data: function(){
         return {

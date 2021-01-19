@@ -82,6 +82,12 @@
     text-align: right;
 }
 
+.cctv-wait {
+    font-size: 1em;
+    text-align: center;
+    font-weight: 400;
+}
+
 .btn-back {
     flex: 1 1 15%;
     box-sizing: border-box;

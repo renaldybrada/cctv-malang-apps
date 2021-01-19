@@ -1,3 +1,9 @@
+window.onerror = function (msg, url, lineNo, columnNo, error) {
+// ... handle error ...
+
+return false;
+}
+
 const vm = new Vue({
     el: '#app',
     components: {
@@ -14,7 +20,8 @@ const vm = new Vue({
             showingLocation: {},
             streamUrl: "",
             streamInterval: null,
-            streamCctvImageUrl: ""
+            streamCctvImageUrl: "",
+            isStream: false
         }
     },
 
@@ -93,14 +100,22 @@ const vm = new Vue({
         {
             this.streamInterval = setInterval(() => {
                 let unixTimestamp = Math.round(Date.now()/1000)
-                this.streamCctvImageUrl = this.streamUrl + unixTimestamp
-                unixTimestamp = Math.round(Date.now()/1000)
+                fetch(this.streamUrl + unixTimestamp)
+                .then(response => response.blob())
+                .then(image => {
+                    this.isStream = true;
+                    const urlCreator = window.URL || window.webkitURL;
+                    const imageUrl = urlCreator.createObjectURL(image);
+                    this.streamCctvImageUrl = imageUrl;
+                })
             }, 1000);
         },
 
         stopStream()
         {
+            this.isStream = false;
             clearInterval(this.streamInterval);
+            window.stop();
         }
     },
 

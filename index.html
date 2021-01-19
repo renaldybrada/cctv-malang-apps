@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" href="img/favicon.ico" type="image/gif" sizes="16x16">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
     integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
@@ -22,12 +23,18 @@ crossorigin=""></script>
         </main-menu>
         <cctv-box :showing-location="showingLocation"
             :stream-image="streamCctvImageUrl"
+            :is-stream="isStream"
             v-show="activeCam"
             v-on:back-to-menu="backToMenu">
         </cctv-box>
     </div>
 </body>
+<!-- Developer Mode -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script> -->
+<!-- Production Mode -->
 <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+
+
 <script src="https://unpkg.com/http-vue-loader"></script>
 <script src="js/main.js"></script>
 </html>
